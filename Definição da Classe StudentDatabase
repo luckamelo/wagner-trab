@@ -1,0 +1,30 @@
+class StudentDatabase:
+    def __init__(self):
+        self.students = []
+
+    def create_student(self, student_id, nome, idade, mae, pai):
+        student = Student(student_id, nome, idade, mae, pai)
+        self.students.append(student)
+
+    def read_student(self, student_id):
+        for student in self.students:
+            if student.student_id == student_id:
+                return student
+        return None
+
+    def update_student(self, student_id, nome, idade, mae, pai):
+        for student in self.students:
+            if student.student_id == student_id:
+                student.nome = nome
+                student.idade = idade
+                student.mae = mae
+                student.pai = pai
+                return True
+        return False
+
+    def delete_student(self, student_id):
+        for student in self.students:
+            if student.student_id == student_id:
+                self.students.remove(student)
+                return True
+        return False

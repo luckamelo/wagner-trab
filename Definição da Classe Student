@@ -1,0 +1,7 @@
+class Student:
+    def __init__(self, student_id, nome, idade, mae, pai):
+        self.student_id = student_id
+        self.nome = nome  
+        self.idade = idade
+        self.mae = mae
+        self.pai = pai
